@@ -1,0 +1,233 @@
+<html><head>
+<title>Rozengain.com - WebGL Tunnel</title>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
+
+<script id="vshader" type="x-shader/x-vertex">
+
+    uniform mat4 u_modelViewProjMatrix;
+    uniform mat4 u_normalMatrix;
+    uniform vec3 lightDir;
+
+    attribute vec3 vNormal;
+    attribute vec4 vTexCoord;
+    attribute vec4 vPosition;
+
+    varying float v_Dot;
+    varying vec2 v_texCoord;
+
+    void main()
+    {
+        gl_Position = u_modelViewProjMatrix * vPosition;
+        v_texCoord = vTexCoord.st;
+        vec4 transNormal = u_normalMatrix * vec4(vNormal, 1);
+        v_Dot = max(dot(transNormal.xyz, lightDir), 0.0);
+    }
+
+</script>
+
+<script id="fshader" type="x-shader/x-fragment">
+
+    uniform sampler2D sampler2d;
+
+    varying float v_Dot;
+    varying vec2 v_texCoord;
+
+    void main()
+    {
+        vec2 texCoord = vec2(v_texCoord.s, 1.0 - v_texCoord.t);
+        vec4 color = texture2D(sampler2d, texCoord);
+        color += vec4(0.1, 0.1, 0.1, 1);
+        gl_FragColor = vec4(color.xyz * v_Dot, color.a);
+    }
+
+</script>
+
+
+<script type="text/javascript">
+	var vertices = [];
+	var indices = [];
+	var colors = [];
+	var uvs = [];
+
+	var radius = 7;
+	var currentRadius = radius;
+	var segments = 24;
+	var spacing = 2;
+	var numRings = 18;
+	var index=0;
+	var currentTime = 0;
+	var drawingMode;
+
+  var gl;
+  function initGL(canvas) {
+    try {
+      gl = canvas.getContext("experimental-webgl");
+      gl.viewportWidth = canvas.width;
+      gl.viewportHeight = canvas.height;
+      drawingMode = gl.TRIANGLES;
+    } catch(e) {
+    }
+    if (!gl) {
+      alert("Could not initialise WebGL, sorry :-(");
+    }
+  }
+
+
+  function getShader(gl, id) {
+    var shaderScript = document.getElementById(id);
+    if (!shaderScript) {
+      return null;
+    }
+
+    var str = "";
+    var k = shaderScript.firstChild;
+    while (k) {
+      if (k.nodeType == 3) {
+        str += k.textContent;
+      }
+      k = k.nextSibling;
+    }
+
+    var shader;
+    if (shaderScript.type == "x-shader/x-fragment") {
+      shader = gl.createShader(gl.FRAGMENT_SHADER);
+    } else if (shaderScript.type == "x-shader/x-vertex") {
+      shader = gl.createShader(gl.VERTEX_SHADER);
+    } else {
+      return null;
+    }
+
+    gl.shaderSource(shader, str);
+    gl.compileShader(shader);
+
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+      alert(gl.getShaderInfoLog(shader));
+      return null;
+    }
+
+    return shader;
+  }
+
+
+  var shaderProgram;
+  function initShaders() {
+    var fragmentShader = getShader(gl, "shader-fs");
+    var vertexShader = getShader(gl, "shader-vs");
+
+    shaderProgram = gl.createProgram();
+    gl.attachShader(shaderProgram, vertexShader);
+    gl.attachShader(shaderProgram, fragmentShader);
+    gl.linkProgram(shaderProgram);
+
+    if (!gl.getProgramParameter(shaderProgram, gl.LINK_STATUS)) {
+      alert("Could not initialise shaders");
+    }
+
+    gl.useProgram(shaderProgram);
+
+    shaderProgram.vertexPositionAttribute = gl.getAttribLocation(shaderProgram, "aVertexPosition");
+    gl.enableVertexAttribArray(shaderProgram.vertexPositionAttribute);
+
+    shaderProgram.vertexColorAttribute = gl.getAttribLocation(shaderProgram, "aVertexColor");
+    gl.enableVertexAttribArray(shaderProgram.vertexColorAttribute);
+
+    shaderProgram.textureCoordAttribute = gl.getAttribLocation(shaderProgram, "aTextureCoord");
+    gl.enableVertexAttribArray(shaderProgram.textureCoordAttribute);
+
+    shaderProgram.pMatrixUniform = gl.getUniformLocation(shaderProgram, "uPMatrix");
+    shaderProgram.mvMatrixUniform = gl.getUniformLocation(shaderProgram, "uMVMatrix");
+    shaderProgram.fTimeUniform = gl.getUniformLocation(shaderProgram, "fTime");
+  }
+
+  var rPyramid = 0;
+  var rCube = 0;
+  function drawScene() {
+    gl.viewport(0, 0, gl.viewportWidth, gl.viewportHeight);
+    gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
+
+    perspective(45, gl.viewportWidth / gl.viewportHeight, 0.1, 100.0);
+    loadIdentity();
+
+    mvTranslate([0.0, 0.0, -8.0])
+
+    mvPushMatrix();
+    mvRotate(rCube, [1, 1, 1]);
+
+    gl.bindBuffer(gl.ARRAY_BUFFER, cubeVertexPositionBuffer);
+    gl.vertexAttribPointer(shaderProgram.vertexPositionAttribute, cubeVertexPositionBuffer.itemSize, gl.FLOAT, false, 0, 0);
+
+    gl.bindBuffer(gl.ARRAY_BUFFER, cubeVertexColorBuffer);
+    gl.vertexAttribPointer(shaderProgram.vertexColorAttribute, cubeVertexColorBuffer.itemSize, gl.FLOAT, false, 0, 0);
+
+    gl.bindBuffer(gl.ARRAY_BUFFER, cubeVertexTextureCoordBuffer);
+    gl.vertexAttribPointer(shaderProgram.textureCoordAttribute, cubeVertexTextureCoordBuffer.itemSize, gl.FLOAT, false, 0, 0);
+    
+    gl.activeTexture(gl.TEXTURE0);
+    gl.bindTexture(gl.TEXTURE_2D, tunnelTexture);
+    gl.uniform1i(shaderProgram.samplerUniform, 0);
+    
+    gl.bindBuffer(gl.ELEMENT_ARRAY_BUFFER, cubeVertexIndexBuffer);
+    setMatrixUniforms();
+
+    currentTime = (currentTime + 0.01);
+    gl.uniform1f(shaderProgram.fTimeUniform, currentTime);
+
+    gl.drawElements(drawingMode, cubeVertexIndexBuffer.numItems, gl.UNSIGNED_SHORT, 0);
+
+    mvPopMatrix();
+
+  }
+
+  var tunnelTexture;
+  function initTexture() {
+    tunnelTexture = gl.createTexture();
+    tunnelTexture.image = new Image();
+    tunnelTexture.image.onload = function() {
+      handleLoadedTexture(tunnelTexture)
+    }
+
+    tunnelTexture.image.src = "texture.jpg";
+  }
+
+  function handleLoadedTexture(texture) {
+	    gl.bindTexture(gl.TEXTURE_2D, texture);
+	    gl.pixelStorei(gl.UNPACK_FLIP_Y_WEBGL, true);
+	    gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, texture.image);
+	    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+	    gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+	    gl.bindTexture(gl.TEXTURE_2D, null);
+	}
+
+  function webGLStart() {
+    var canvas = document.getElementById("lesson04-canvas");
+    initGL(canvas);
+    initShaders();
+    initTexture();
+    initBuffers();
+
+    gl.clearColor(0.0, 0.0, 0.0, 1.0);
+
+    gl.clearDepth(1.0);
+
+    gl.enable(gl.DEPTH_TEST);
+    gl.depthFunc(gl.LEQUAL);
+
+    setInterval(drawScene, 15);
+  }
+
+</script>
+<style type="text/css">
+body { text-align: center; background-color: #ccc; font-family: Verdana, Arial; font-size: 11px; }
+#canvasDiv { margin: auto auto; width: 800px; height: 600px; border: 4px solid #fff; }
+.cbCaption { display: block;  }
+.titleDiv { margin: auto auto; width: 800px; height: 26px; text-align: right; }
+</style>
+</head>
+
+
+<body onload="webGLStart();">
+	<div id="canvasDiv">
+  		<canvas id="lesson04-canvas" style="border: none;" width="800" height="600"></canvas>
+  	</div>
+</body>
+</html>
