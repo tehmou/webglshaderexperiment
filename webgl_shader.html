@@ -81,11 +81,12 @@
             #endif
 
             uniform vec2 resolution;
+            uniform float time;
 
             void main(void) {
               vec2 p = gl_FragCoord.xy / resolution.xy;
 
-              float darkness = 2.0;
+              float darkness = sin(time)*2.0;
               vec2 textureCoords = p - 0.5;
               float vignette = 1.0 - (dot(textureCoords, textureCoords) * darkness);
 
@@ -119,7 +120,7 @@
 				scene = new THREE.Scene();
 
                 uniforms = {
-                    time: 0.0,
+                    time: { type: "f", value: 0.0 },
                     resolution: { type: "v2", value: new THREE.Vector2() }
                 };
 
@@ -161,7 +162,7 @@
 			}
 
 			function animate() {
-                uniforms.time += 0.05;
+                uniforms.time.value += 0.05;
 				requestAnimationFrame( animate );
 				render();
 				stats.update();
