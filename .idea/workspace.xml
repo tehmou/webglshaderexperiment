@@ -23,15 +23,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SpiritBox.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/SpiritBox.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="44" column="0" selection-start="1939" selection-end="1939" vertical-scroll-proportion="-3.9">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="index2.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/index2.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -50,10 +41,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="glplainrendering.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="glplainrendering.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/glplainrendering.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="61" column="40" selection-start="1947" selection-end="1947" vertical-scroll-proportion="0.81072557">
+            <state line="44" column="9" selection-start="1327" selection-end="1327" vertical-scroll-proportion="-12.0">
               <folding />
             </state>
           </provider>
@@ -68,10 +59,19 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="gltextureutils.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gltextureutils.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="0" selection-start="839" selection-end="839" vertical-scroll-proportion="0.3918723">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="webgl_shader2.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/webgl_shader2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="57" selection-start="1316" selection-end="1316" vertical-scroll-proportion="-2.9746835">
+            <state line="46" column="29" selection-start="1258" selection-end="1258" vertical-scroll-proportion="-2.0253165">
               <folding />
             </state>
           </provider>
@@ -100,9 +100,9 @@
         <option value="$PROJECT_DIR$/glshaderutils.js" />
         <option value="$PROJECT_DIR$/globject.js" />
         <option value="$PROJECT_DIR$/glutils.js" />
-        <option value="$PROJECT_DIR$/gltextureutils.js" />
-        <option value="$PROJECT_DIR$/webgl_shader2.html" />
         <option value="$PROJECT_DIR$/glplainrendering.js" />
+        <option value="$PROJECT_DIR$/webgl_shader2.html" />
+        <option value="$PROJECT_DIR$/gltextureutils.js" />
       </list>
     </option>
   </component>
@@ -344,13 +344,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gltextureutils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="0" selection-start="926" selection-end="926" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/SpiritBox_files/webgl-utils.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -405,6 +398,13 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/glplainrendering.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="9" selection-start="1327" selection-end="1327" vertical-scroll-proportion="-12.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/glshaderutils.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="29" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0">
@@ -421,14 +421,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/webgl_shader2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="57" selection-start="1316" selection-end="1316" vertical-scroll-proportion="-2.9746835">
+        <state line="46" column="29" selection-start="1258" selection-end="1258" vertical-scroll-proportion="-2.0253165">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/glplainrendering.js">
+    <entry file="file://$PROJECT_DIR$/gltextureutils.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="61" column="40" selection-start="1947" selection-end="1947" vertical-scroll-proportion="0.81072557">
+        <state line="18" column="0" selection-start="839" selection-end="839" vertical-scroll-proportion="0.3918723">
           <folding />
         </state>
       </provider>
