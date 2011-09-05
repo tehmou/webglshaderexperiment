@@ -8,7 +8,7 @@ var glPlainRendering = {
     imageURL: null,
     texture: null,
 
-    resX: 0, resY: 0, time: 0.0,
+    time: 0.0,
 
     init: function () {
         var vertices = new Float32Array([ -1.,-1., 1.,-1., -1.,1., 1.,-1., 1.,1., -1.,1.]);
@@ -30,13 +30,8 @@ var glPlainRendering = {
 
     },
 
-    onWindowResize: function (event) {
-        this.resX = window.innerWidth;
-        this.resY = window.innerHeight;
-    },
-
     animate: function () {
-        this.time += 0.05;
+        this.time += 0.01;
     },
 
     render: function () {
@@ -46,12 +41,10 @@ var glPlainRendering = {
 
         var gl = this.gl;
 
-        gl.viewport(0, 0, this.resX, this.resY);
-
         gl.bindBuffer(gl.ARRAY_BUFFER, this.mQuadVBO);
 
-        gl.uniform2f(gl.getUniformLocation(this.shader, "resolution"), this.resX, this.resY);
-        gl.uniform1f(gl.getUniformLocation(this.shader, "time"), this.time);
+        gl.uniform2f(gl.getUniformLocation(this.shader, "resolution"), gl.viewportWidth, gl.viewportHeight);
+        gl.uniform1f(gl.getUniformLocation(this.shader, "ratio"), 0.5+Math.sin(this.time)/2);
 
         gl.vertexAttribPointer(this.gl.getAttribLocation(this.shader, "position"), 2, gl.FLOAT, false, 0, 0);
 

@@ -42,14 +42,18 @@
 
             uniform vec2 resolution;
             uniform sampler2D tex0;
-            uniform float time;
+            uniform float ratio;
 
             void main(void) {
                 vec2 p = gl_FragCoord.xy / resolution.xy;
-
                 vec4 o = texture2D(tex0,vec2(p.x,1.0-p.y));
 
-                gl_FragColor = o;
+                float b = clamp(ratio*1.2, 0.0, 1.0);
+                float g = clamp((ratio-0.2)*2.0, 0.0, 1.0);
+                float r = clamp((ratio-0.4)*1.4, 0.0, 1.0);
+                float a = clamp(0.2+ratio*2.0, 0.0, 1.0);
+
+                gl_FragColor = vec4(1.0-r*(1.0-o.x), 1.0-g*(1.0-o.y), 1.0-b*(1.0-o.z), r);
             }
 		</script>
 
