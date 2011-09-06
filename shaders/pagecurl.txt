@@ -1,0 +1,83 @@
+<languageVersion : 1.0;>
+
+kernel PageCurl3
+<   namespace : "sfb";
+    vendor : "Thomas Vian";
+    version : 2;
+    description : "Curls a page faster";
+>
+{
+
+   parameter float2 normal
+    <
+        minValue:float2(-1.0, -1.0);
+        maxValue:float2(1.0, 1.0);
+        defaultValue:float2(0.707, 0.707);
+    >;
+
+    parameter float curlOffset
+    <
+        minValue:0.0;
+        maxValue:20.0;
+        defaultValue:5.0;
+    >;
+
+    const pixel4 blank = pixel4(0.0, 0.0, 0.0, 0.0);
+
+    input image4 src;
+    output pixel4 dst;
+
+    void
+    evaluatePixel()
+    {
+        // Position
+        float2 P = outCoord();
+
+        // Distance from line
+        float d = (normal.y*P.y + normal.x*P.x) / 100.0;
+
+        // Inner component of hyperbola
+        float inner = curlOffset*(curlOffset - 2.0*d) + d*d - 1.0;
+
+        if(inner >= 0.0 && d < curlOffset)
+        {
+            //Real Value
+            float sqrtInner = sqrt(inner);
+
+            // Nearest Point
+            float num = P.x * normal.y - P.y * normal.x;
+            float2 NP = float2(num * normal.y, -num * normal.x);
+
+            pixel4 col2 = sampleNearest(src, NP + normal * (curlOffset + sqrtInner) * 100.0);
+
+            float shadeRatio = sqrtInner/d;
+
+            if(col2.a > 0.0)
+            {
+                dst = col2;
+
+                float shade = 0.35 + 3.0 * shadeRatio * shadeRatio;
+                if(shade > 1.0) shade = 1.0;
+
+                dst.r *= shade;
+                dst.g *= shade;
+                dst.b *= shade;
+            }
+            else
+            {
+                dst = sampleNearest(src, NP + normal * (curlOffset - sqrtInner) * 100.0);
+
+                float shade = shadeRatio + 0.2;
+                if(shade > 1.0) shade = 1.0;
+
+                dst.r *= shade;
+                dst.g *= shade;
+                dst.b *= shade;
+            }
+        }
+        else
+        {
+            dst = blank;
+        }
+    }
+}
