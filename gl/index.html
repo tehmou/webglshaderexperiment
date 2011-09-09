@@ -57,15 +57,18 @@
             }
 		</script>
 
-		<script src="globject.js" type="text/javascript"></script>
+		<script src="glelements/globject.js" type="text/javascript"></script>
+        <script src="glelements/glplanerenderer.js" type="text/javascript"></script>
+        <script src="glelements/gltexturedshadered.js" type="text/javascript"></script>
+        <script src="glelements/glstats.js" type="text/javascript"></script>
+
         <script src="gltextureutils.js" type="text/javascript"></script>
         <script src="glshaderutils.js" type="text/javascript"></script>
-        <script src="glplainrendering.js" type="text/javascript"></script>
-        <script src="glstats.js" type="text/javascript"></script>
         <script src="glutils.js" type="text/javascript"></script>
+
         <script type="text/javascript">
 
-            var o = c0mposer.compose(glObject, glPlainRendering, glStats, {
+            var o = c0mposer.compose(glObject, glImageRenderer, glTexturedShadered, glStats, {
                 vertexShaderCode: document.getElementById('vertexShader').textContent,
                 fragmentShaderCode: document.getElementById('fragmentShader').textContent,
                 imageURL: "IMG_2235.JPG",
