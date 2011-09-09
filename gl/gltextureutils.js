@@ -1,14 +1,13 @@
 var glTextureUtils = {
-    loadImageTexture: function (url)
+    loadImageTexture: function (gl, url)
     {
-        var texture = this.gl.createTexture();
+        var texture = gl.createTexture();
         var image = new Image();
-        image.onload = _.bind(function() { this.createGLTexture(image, texture) }, this);
+        image.onload = _.bind(function() { this.createGLTexture(gl, image, texture) }, this);
         image.src = url;
         return texture;
     },
-    createGLTexture: function (image, texture) {
-        var gl = this.gl;
+    createGLTexture: function (gl, image, texture) {
         gl.enable(gl.TEXTURE_2D);
         gl.bindTexture(gl.TEXTURE_2D, texture);
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.RGBA, gl.RGBA, gl.UNSIGNED_BYTE, image);

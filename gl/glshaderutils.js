@@ -1,9 +1,7 @@
 var glShaderUtils = {
-    createShader: function (fragmentShaderCode, vertexShaderCode)
+    createShader: function (gl, fragmentShaderCode, vertexShaderCode)
     {
         var infoLog;
-
-        var gl = this.gl;
 
         var tmpProgram = gl.createProgram();
 

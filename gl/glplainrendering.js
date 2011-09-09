@@ -17,20 +17,19 @@ var glPlainRendering = {
         this.gl.bufferData(this.gl.ARRAY_BUFFER, vertices, this.gl.STATIC_DRAW);
 
         if (this.fragmentShaderCode && this.vertexShaderCode && !this.shader) {
-            this.shader = this.createShader(this.fragmentShaderCode, this.vertexShaderCode);
+            this.shader = glShaderUtils.createShader(this.gl, this.fragmentShaderCode, this.vertexShaderCode);
         }
 
         if (this.imageURL && !this.texture) {
-            this.texture = this.loadImageTexture(this.imageURL);
+            this.texture = glTextureUtils.loadImageTexture(this.gl, this.imageURL);
         }
 
         this.gl.useProgram(this.shader);
         this.gl.enable(this.gl.TEXTURE_2D);
         this.gl.enableVertexAttribArray(this.gl.getAttribLocation(this.shader, "position"));
-
     },
 
-    animate: function () {
+    preRender: function () {
         this.time += 0.01;
     },
 

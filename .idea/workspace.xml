@@ -23,82 +23,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="167" column="0" selection-start="4613" selection-end="4749" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="glplainrendering.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/glplainrendering.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="45" selection-start="719" selection-end="719" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="globject.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/globject.js">
+        <entry file="file://$PROJECT_DIR$/gl/globject.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="31" selection-start="708" selection-end="708" vertical-scroll-proportion="0.0">
+            <state line="10" column="26" selection-start="290" selection-end="290" vertical-scroll-proportion="-2.7272727">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gltextureutils.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gltextureutils.js">
+      <file leaf-file-name="glutils.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gl/glutils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="2" selection-start="892" selection-end="892" vertical-scroll-proportion="0.0">
+            <state line="0" column="11" selection-start="4" selection-end="11" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="webgl_shader2.html" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/webgl_shader2.html">
+      <file leaf-file-name="glstats.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gl/glstats.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="53" column="57" selection-start="1610" selection-end="1610" vertical-scroll-proportion="0.0">
+            <state line="2" column="0" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Detector.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/Detector.js">
+      <file leaf-file-name="glshaderutils.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gl/glshaderutils.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="5" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RequestAnimationFrame.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/RequestAnimationFrame.js">
+      <file leaf-file-name="glplainrendering.js" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gl/glplainrendering.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="541" selection-end="541" vertical-scroll-proportion="0.0">
+            <state line="28" column="72" selection-start="990" selection-end="990" vertical-scroll-proportion="0.36956522">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pagecurl.txt" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/shaders/pagecurl.txt">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gl/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="82" column="1" selection-start="1923" selection-end="1923" vertical-scroll-proportion="4.38796">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="postprocess.txt" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/postprocess.txt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="33" selection-start="826" selection-end="831" vertical-scroll-proportion="0.0">
+            <state line="74" column="20" selection-start="2598" selection-end="2598" vertical-scroll-proportion="-22.666666">
               <folding />
             </state>
           </provider>
@@ -118,9 +91,6 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/postprocess.txt" />
-        <option value="$PROJECT_DIR$/index.html" />
-        <option value="$PROJECT_DIR$/SpiritBox.html" />
         <option value="$PROJECT_DIR$/webgl_shader.html" />
         <option value="$PROJECT_DIR$/my.js" />
         <option value="$PROJECT_DIR$/my2.js" />
@@ -130,7 +100,13 @@
         <option value="$PROJECT_DIR$/gltextureutils.js" />
         <option value="$PROJECT_DIR$/glplainrendering.js" />
         <option value="$PROJECT_DIR$/webgl_shader2.html" />
-        <option value="$PROJECT_DIR$/shaders/pagecurl.txt" />
+        <option value="$PROJECT_DIR$/gl/glshaderutils.js" />
+        <option value="$PROJECT_DIR$/gl/gltextureutils.js" />
+        <option value="$PROJECT_DIR$/gl/glutils.js" />
+        <option value="$PROJECT_DIR$/gl/glstats.js" />
+        <option value="$PROJECT_DIR$/gl/globject.js" />
+        <option value="$PROJECT_DIR$/gl/index.html" />
+        <option value="$PROJECT_DIR$/gl/glplainrendering.js" />
       </list>
     </option>
   </component>
@@ -160,8 +136,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Favorites" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -170,7 +144,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webgl" />
+              <option name="myItemId" value="webglshaderexperiment" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -180,24 +154,40 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="webgl" />
+              <option name="myItemId" value="webglshaderexperiment" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="shaders" />
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webgl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webglshaderexperiment" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="gl" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Favorites" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="options.splitter.main.proportions" value="0.3" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="editor.preferences.tabs" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -245,7 +235,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="45" y="22" width="1235" height="778" extended-state="6" />
+    <frame x="0" y="22" width="1440" height="825" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -253,7 +243,7 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34317032" sideWeight="0.0" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42430556" sideWeight="0.0" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -329,14 +319,9 @@
         <state line="44" column="0" selection-start="1939" selection-end="1939" vertical-scroll-proportion="-3.9" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/IMG_2235.JPG">
+    <entry file="file://$PROJECT_DIR$/gl/IMG_2235.JPG">
       <provider selected="true" editor-type-id="images">
         <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/glshaderutils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="29" selection-start="452" selection-end="452" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index2.html">
@@ -346,39 +331,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="167" column="0" selection-start="4613" selection-end="4749" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/glplainrendering.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="45" selection-start="719" selection-end="719" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/globject.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="31" selection-start="708" selection-end="708" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gltextureutils.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="2" selection-start="892" selection-end="892" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/webgl_shader2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="53" column="57" selection-start="1610" selection-end="1610" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/Detector.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/RequestAnimationFrame.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="541" selection-end="541" vertical-scroll-proportion="0.0">
+        <state line="167" column="0" selection-start="4613" selection-end="4749" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -390,7 +343,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/shaders/pagecurl.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="1" selection-start="1923" selection-end="1923" vertical-scroll-proportion="4.38796">
+        <state line="11" column="5" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gl/gltextureutils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="5" selection-start="870" selection-end="870" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gl/glutils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="11" selection-start="4" selection-end="11" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gl/glstats.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="2" column="0" selection-start="33" selection-end="33" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gl/glshaderutils.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="5" column="0" selection-start="120" selection-end="120" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gl/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="74" column="20" selection-start="2598" selection-end="2598" vertical-scroll-proportion="-22.666666">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gl/globject.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="26" selection-start="290" selection-end="290" vertical-scroll-proportion="-2.7272727">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gl/glplainrendering.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="28" column="72" selection-start="990" selection-end="990" vertical-scroll-proportion="0.36956522">
           <folding />
         </state>
       </provider>
