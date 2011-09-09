@@ -4,7 +4,7 @@ var glTexturedShadered = {
     shader: null,
     imageURL: null,
     texture: null,
-    time: 0.0,
+    ratio: 0.0,
 
     init: function () {
         this.gl.enable(this.gl.TEXTURE_2D);
@@ -18,11 +18,10 @@ var glTexturedShadered = {
         this.gl.enableVertexAttribArray(this.gl.getAttribLocation(this.shader, "position"));
     },
     preRender: function () {
-        this.time += 0.01;
 
         var gl = this.gl;
         gl.uniform2f(gl.getUniformLocation(this.shader, "resolution"), gl.viewportWidth, gl.viewportHeight);
-        gl.uniform1f(gl.getUniformLocation(this.shader, "ratio"), 0.5+Math.sin(this.time)/2);
+        gl.uniform1f(gl.getUniformLocation(this.shader, "ratio"), this.ratio);
 
         gl.vertexAttribPointer(this.gl.getAttribLocation(this.shader, "position"), 2, gl.FLOAT, false, 0, 0);
 
